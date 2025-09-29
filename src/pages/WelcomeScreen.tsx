@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, User, Building2, Fingerprint, Languages } from "lucide-react";
+import { Heart, User, Building2, Fingerprint } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const WelcomeScreen = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { t } = useTranslation();
   const [selectedRole, setSelectedRole] = useState<string>("");
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("english");
   const [pin, setPin] = useState<string>("");
 
   const handleLogin = () => {
@@ -52,8 +53,8 @@ const WelcomeScreen = () => {
           <div className="w-16 h-16 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-elevated">
             <Heart className="w-8 h-8 text-primary" />
           </div>
-          <h1 className="text-2xl font-bold text-white mb-2">ASHA Sahayika</h1>
-          <p className="text-white/80">Digital Health Companion</p>
+          <h1 className="text-2xl font-bold text-white mb-2">{t('app_name')}</h1>
+          <p className="text-white/80">{t('app_tagline')}</p>
         </div>
 
         <Card className="shadow-elevated">
@@ -65,23 +66,7 @@ const WelcomeScreen = () => {
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Language Selector */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium flex items-center gap-2">
-                <Languages className="w-4 h-4" />
-                Language / भाषा
-              </label>
-              <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select Language" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="english">English</SelectItem>
-                  <SelectItem value="hindi">हिंदी (Hindi)</SelectItem>
-                  <SelectItem value="marathi">मराठी (Marathi)</SelectItem>
-                  <SelectItem value="tamil">தமிழ் (Tamil)</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+            <LanguageSelector />
 
             {/* Role Selection */}
             <div className="space-y-2">

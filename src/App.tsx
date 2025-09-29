@@ -11,6 +11,7 @@ import SyncScreen from "./pages/SyncScreen";
 import PHCDashboard from "./pages/PHCDashboard";
 import AIAlerts from "./pages/AIAlerts";
 import P2PSync from "./pages/P2PSync";
+import FormsDemo from "./pages/FormsDemo";
 import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
@@ -30,7 +31,8 @@ const App = () => (
           <Route path="/sync" element={<SyncScreen />} />
           <Route path="/phc-dashboard" element={<PHCDashboard />} />
           <Route path="/ai-alerts" element={<AIAlerts />} />
-          <Route path="/p2p-sync" element={<P2PSync />} />
+        <Route path="/p2p-sync" element={<P2PSync />} />
+        <Route path="/forms-demo" element={<FormsDemo />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
