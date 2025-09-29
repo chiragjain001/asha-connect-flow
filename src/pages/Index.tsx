@@ -68,18 +68,10 @@ const Index = () => {
                   size="lg"
                   className="w-full md:w-auto bg-white text-primary hover:bg-white/90 font-medium h-14 px-8 shadow-elevated"
                 >
-                  Get Started as ASHA Worker
+                  Get Started →
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-                <br />
-                <Button 
-                  variant="outline" 
-                  onClick={() => navigate("/phc-dashboard")} 
-                  size="lg"
-                  className="w-full md:w-auto border-2 border-white text-white hover:bg-white/10 font-medium h-14 px-8"
-                >
-                  View PHC Dashboard
-                </Button>
+                
               </div>
             </div>
 
