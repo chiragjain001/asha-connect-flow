@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Plus, Search, User, Clock, CheckCircle, AlertCircle, RefreshCw, Menu, Bell } from "lucide-react";
 import { mockPatients, type Patient } from "@/data/mockData";
 import { useToast } from "@/hooks/use-toast";
+import p2pIcon from "/p2p-icon.png";
 
 const ASHADashboard = () => {
   const navigate = useNavigate();
@@ -62,18 +63,26 @@ const ASHADashboard = () => {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Button 
-              variant="ghost" 
-              size="icon" 
+            <Button
+              variant="ghost"
+              size="icon"
               className="text-primary-foreground hover:bg-white/20 relative"
               onClick={() => navigate("/ai-alerts")}
             >
               <Bell className="w-5 h-5" />
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse-glow"></div>
             </Button>
-            <Button 
-              variant="ghost" 
-              size="icon" 
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-primary-foreground hover:bg-white/20"
+              onClick={() => navigate("/p2p-sync")}
+            >
+              <img src={p2pIcon} alt="P2P Sync" className="w-6 h-6" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
               className="text-primary-foreground hover:bg-white/20"
               onClick={() => navigate("/sync")}
             >

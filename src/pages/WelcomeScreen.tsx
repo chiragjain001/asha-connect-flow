@@ -102,6 +102,7 @@ const WelcomeScreen = () => {
                 maxLength={4}
                 className="text-center text-lg tracking-widest"
               />
+              <p className="text-red-500 text-xs">temporary password : 1234</p>
             </div>
 
             {/* Biometric Option */}
