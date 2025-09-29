@@ -68,7 +68,7 @@ const Index = () => {
                   size="lg"
                   className="w-full md:w-auto bg-white text-primary hover:bg-white/90 font-medium h-14 px-8 shadow-elevated"
                 >
-                  Get Started →
+                  Get Started
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
                 
